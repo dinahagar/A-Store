@@ -1,0 +1,31 @@
+.sidebar{
+  background: darkcyan;
+  height: 100vh;
+  color: white;
+}
+
+.sidebarTitle {
+  display: flex;
+  align-items: center;
+  text-shadow: 2px 2px 5px black;
+  padding: 20px;
+}
+
+.sidebarTitle h3 {
+  margin-left: 5px;
+}
+
+ul {
+  padding: 20px;
+}
+
+li {
+  list-style: none;
+  font-size: 20px;
+  padding: 20px 0 10px 0;
+}
+
+a {
+  text-shadow: 2px 2px 5px darkgoldenrod;
+  cursor: pointer;
+}

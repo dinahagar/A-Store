@@ -1,0 +1,12 @@
+<mat-toolbar class="navbar">
+  <div class="storeMenu">
+    <button (click)="toggleSidebar()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a routerLink="/" class="logo">Store</a>
+  </div>
+  <ul>
+    <li><a class="logout">{{isLang ? 'Eng' : 'Ar'}}</a></li>
+    <li><a class="language">Logout</a></li>
+  </ul>
+</mat-toolbar>

@@ -1,0 +1,40 @@
+.navbar {
+  background: darkcyan;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 0 8px 3px #888888;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+ul li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+.storeMenu {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  text-shadow: 2px 2px 5px red;
+}
+
+.logout {
+  text-decoration: none;
+  color: white;
+}
+
+.language {
+  text-decoration: none;
+  color: white;
+}
