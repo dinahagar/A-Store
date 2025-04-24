@@ -1,4 +1,6 @@
 import { Component, HostListener } from '@angular/core';
+import { ProductsService } from '../products.service';
+import { Product } from '../models/product';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +10,9 @@ import { Component, HostListener } from '@angular/core';
 export class HomeComponent {
 
   public isOpen!:boolean;
+  products: Product[] = [];
 
-  constructor() {}
+  constructor(private productsService: ProductsService) {}
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
@@ -22,9 +25,17 @@ export class HomeComponent {
 
   ngOnInit() {
     this.setSidebarState();
+    this.getProducts();
   }
 
   handleSidebarToggle(newState: boolean) {
     this.isOpen = newState;
+  }
+
+  getProducts() {
+    this.productsService.getProducts().subscribe((result: Product[]) => {
+      console.log(result);
+      this.products = result;
+    })
   }
 }

@@ -1,1 +1,24 @@
-<p>product-card works!</p>
+<div *ngFor="let product of products">
+  <mat-card class="productCard" appearance="outlined">
+    <div class="productImage">
+      <img mat-card-image src="{{product.image}}">
+    </div>
+    <mat-card-content>
+      <p class="productTitle">{{product.title | slice:0:20}}</p>
+      <p class="productCategory">{{product.category}}</p>
+    </mat-card-content>
+    <div class="productDetails">
+      <div class="rate">
+        <fa-icon [icon]="faStar" class="starIcon"></fa-icon>
+        <span class="rateText">{{product.rating.rate}}</span>
+      </div>
+      <div class="price">
+        <span class="priceText">{{product.price | currency}}</span>
+      </div>
+    </div>
+    <mat-card-actions class="cardButtons">
+      <fa-icon [icon]="faCircleInfo" class="infoBtn"></fa-icon>
+      <fa-icon [icon]="faCirclePlus" class="addBtn"></fa-icon>
+    </mat-card-actions>
+  </mat-card>
+</div>
