@@ -5,25 +5,9 @@
   </div>
   <mat-divider></mat-divider>
   <ul>
-    <li>
-      <a>Men's Clothing</a>
+    <li *ngFor="let category of categories">
+      <a>{{category}}</a>
     </li>
     <mat-divider></mat-divider>
-
-    <li>
-      <a>Women's Clothing</a>
-    </li>
-    <mat-divider></mat-divider>
-
-    <li>
-      <a>Electronics</a>
-    </li>
-    <mat-divider></mat-divider>
-
-    <li>
-      <a>Jewelery</a>
-    </li>
-    <mat-divider></mat-divider>
-
   </ul>
 </div>
