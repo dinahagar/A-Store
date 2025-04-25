@@ -1,0 +1,9 @@
+<app-navbar [isOpen]="isOpen" (isOpenChange)="handleSidebarToggle($event)"></app-navbar>
+
+<div class="{{ isOpen ? 'layout' : 'layoutWithoutSidebar'}}">
+  <app-sidebar [isOpen]="isOpen" *ngIf="isOpen" class="sidebarSelector"></app-sidebar>
+
+  <div class="layout-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

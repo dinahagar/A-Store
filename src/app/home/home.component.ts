@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { Product } from '../models/product';
 
@@ -7,29 +7,14 @@ import { Product } from '../models/product';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
 
-  public isOpen!:boolean;
   products: Product[] = [];
 
   constructor(private productsService: ProductsService) {}
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
-    this.setSidebarState();
-  }
-
-  setSidebarState() {
-    this.isOpen = window.innerWidth >= 768;
-  }
-
   ngOnInit() {
-    this.setSidebarState();
     this.getProducts();
-  }
-
-  handleSidebarToggle(newState: boolean) {
-    this.isOpen = newState;
   }
 
   getProducts() {
