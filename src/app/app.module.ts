@@ -17,6 +17,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutComponent } from './layout/layout.component';
+import { CategoryProductsComponent } from './category-products/category-products.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LayoutComponent } from './layout/layout.component';
     ProductCardComponent,
     SearchComponent,
     HomeComponent,
-    LayoutComponent
+    LayoutComponent,
+    CategoryProductsComponent
   ],
   imports: [
     BrowserModule,

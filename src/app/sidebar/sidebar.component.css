@@ -28,4 +28,10 @@ li {
 a {
   text-shadow: 2px 2px 5px darkgoldenrod;
   cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.category-divider {
+  margin-top: 15px;
 }

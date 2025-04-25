@@ -6,8 +6,8 @@
   <mat-divider></mat-divider>
   <ul>
     <li *ngFor="let category of categories">
-      <a>{{category}}</a>
+      <a routerLink="/category/{{category}}">{{category}}</a>
+      <mat-divider class="category-divider"></mat-divider>
     </li>
-    <mat-divider></mat-divider>
   </ul>
 </div>
