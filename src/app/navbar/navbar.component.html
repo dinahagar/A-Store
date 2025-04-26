@@ -6,7 +6,12 @@
     <a routerLink="/" class="logo">Store</a>
   </div>
   <ul>
-    <li><a class="logout">{{isLang ? 'Eng' : 'Ar'}}</a></li>
-    <li><a class="language">Logout</a></li>
+    <li><a class="language">{{isLang ? 'Eng' : 'Ar'}}</a></li>
+    <li>
+      <button mat-button [matMenuTriggerFor]="menu" class="profile-button">{{username[0] | uppercase}}</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/login">Logout</button>
+      </mat-menu>
+    </li>
   </ul>
 </mat-toolbar>

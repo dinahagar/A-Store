@@ -12,9 +12,12 @@ export class NavbarComponent implements OnInit{
 
   @Output() isOpenChange = new EventEmitter<boolean>();
 
+  username: string = localStorage.getItem('username') || '';
+
   constructor() {}
 
   ngOnInit(): void {
+
   }
 
   toggleSidebar() {

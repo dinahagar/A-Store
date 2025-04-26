@@ -4,8 +4,12 @@ import { HomeComponent } from './home/home.component';
 import { CategoryProductsComponent } from './category-products/category-products.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  {
+    path: 'login', component: LoginComponent
+  },
   {
     path: '' , component: LayoutComponent, children: [
       {

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
-import { ProductsService } from '../services/products.service';
+import { ProductsService } from '../services/products/products.service';
 
 @Component({
   selector: 'app-sidebar',

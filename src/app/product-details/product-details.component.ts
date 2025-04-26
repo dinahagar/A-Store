@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../services/products.service';
+import { ProductsService } from '../services/products/products.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../models/product';
 import { faCirclePlus, faStar } from '@fortawesome/free-solid-svg-icons';
