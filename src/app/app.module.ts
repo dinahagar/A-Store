@@ -23,6 +23,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import {MatMenuModule} from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LayoutComponent,
     CategoryProductsComponent,
     ProductDetailsComponent,
-    LoginComponent
+    LoginComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
