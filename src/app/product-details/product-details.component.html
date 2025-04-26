@@ -1,0 +1,44 @@
+<div class="productDetails">
+  <div class="image">
+    <img src="{{productDetails.image}}" alt="">
+  </div>
+  <div class="title">
+    <p>{{productDetails.title}}</p>
+  </div>
+  <div class="section">
+    <p class="detail">
+      <span class="text">Price:</span>
+      <span class="value">{{productDetails.price | currency}}</span>
+    </p>
+    <p class="detail">
+      <span class="text">Rating:</span>
+      <fa-icon [icon]="faStar" class="starIcon"></fa-icon>
+      <span class="value">{{productDetails.rating.rate}}</span>
+    </p>
+  </div>
+  <div class="section">
+    <p class="detail">
+      <span class="text">Category:</span>
+      <span class="value">{{productDetails.category}}</span>
+    </p>
+    <p class="detail">
+      <span class="text">Count:</span>
+      <span class="value">{{productDetails.rating.count}}</span>
+    </p>
+  </div>
+  <div>
+    <p class="text">Description:</p>
+    <div class="description">
+      <p class="desc">
+        {{allDesc ? productDetails.description : productDetails.description | slice:0:100}}...
+        <a (click)="getAllDesc()">{{allDesc ? 'Less' : 'More'}}</a>
+      </p>
+    </div>
+  </div>
+  <div class="addToCartBtn">
+    <button>
+      <fa-icon [icon]="faCirclePlus" class="addBtn"></fa-icon>
+      <span>Add To Cart</span>
+    </button>
+  </div>
+</div>

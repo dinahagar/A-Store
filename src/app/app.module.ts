@@ -18,6 +18,7 @@ import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutComponent } from './layout/layout.component';
 import { CategoryProductsComponent } from './category-products/category-products.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CategoryProductsComponent } from './category-products/category-products
     SearchComponent,
     HomeComponent,
     LayoutComponent,
-    CategoryProductsComponent
+    CategoryProductsComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

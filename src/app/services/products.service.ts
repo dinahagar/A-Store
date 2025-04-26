@@ -21,4 +21,8 @@ export class ProductsService {
     return this.http.get<Product[]>(`https://fakestoreapi.com/products/category/${category}`);
   }
 
+  getProductById(id: number) {
+    return this.http.get<Product>(`https://fakestoreapi.com/products/${id}`);
+  }
+
 }
