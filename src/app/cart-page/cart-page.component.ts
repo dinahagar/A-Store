@@ -15,6 +15,7 @@ export class CartPageComponent implements OnInit{
   faCirclePlus = faCirclePlus;
   faCircleMinus = faCircleMinus;
   totalQuantity: number = 0;
+  totalPrice: number = 0;
 
   constructor(private cartService: CartService) {}
 
@@ -22,7 +23,10 @@ export class CartPageComponent implements OnInit{
     this.cartService.cart$.subscribe(items => {
       this.cartItems = items;
       this.totalQuantity = this.cartItems.reduce((sum, item) => sum + (item.quantity || 0), 0);
+      this.totalPrice = this.cartItems.reduce((sum, item) => sum + (item.price * (item.quantity || 0)), 0);
     })
+    console.log(this.totalPrice);
+
   }
 
   addToCart(product: Product) {

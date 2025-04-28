@@ -1,3 +1,11 @@
+.items {
+  border-bottom: solid 1px gray;
+}
+
+.header {
+  text-align: center;
+}
+
 .header h2 {
   color: darkblue;
 }
@@ -11,7 +19,7 @@
   padding: 15px;
   border-radius: 20px;
   box-shadow: 0px 2px 4px 2px darkgray;
-  margin-bottom: 20px;
+  margin: 30px 0;
 }
 
 .itemCard img {
@@ -89,4 +97,39 @@
   box-shadow: 0px 2px 4px 2px darkgray;
   cursor: pointer;
   width: 50%;
+}
+
+.totalPrice, .totalItems {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.priceText, .itemsText {
+  color: darkblue;
+}
+
+.priceNum, .itemsNum {
+  color: crimson;
+}
+
+.totalInfo h2 {
+  color: darkblue;
+}
+
+.checkout-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.checkout-btn button {
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 20px;
+  padding: 15px;
+  width: 30%;
+  box-shadow: 0px 2px 4px 2px darkgray;
+  cursor: pointer;
 }
