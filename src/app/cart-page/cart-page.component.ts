@@ -29,4 +29,8 @@ export class CartPageComponent implements OnInit{
     this.cartService.addToCart(product);
   }
 
+  removeAllProduct(product: Product) {
+    this.cartService.removeAllProduct(product)
+  }
+
 }

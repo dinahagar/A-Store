@@ -5,12 +5,12 @@
   <div *ngFor="let item of cartItems" class="itemCard">
     <img src="{{item.image}}" alt="">
     <p class="title">{{item.title.split(' ')[0]}}</p>
-    <p class="price">{{item.price | currency}}</p>
+    <p class="price">{{item.price * (item.quantity || 1) | currency}}</p>
     <div class="numOfItems">
       <fa-icon [icon]="faCirclePlus" class="addBtn" (click)="addToCart(item)"></fa-icon>
       <span class="number">{{item.quantity}}</span>
       <fa-icon [icon]="faCircleMinus" class="minusBtn"></fa-icon>
     </div>
-    <fa-icon [icon]="faTrash" class="trashBtn"></fa-icon>
+    <fa-icon [icon]="faTrash" class="trashBtn" (click)="removeAllProduct(item)"></fa-icon>
   </div>
 </div>

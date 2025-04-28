@@ -28,4 +28,9 @@ export class CartService {
     }
   }
 
+  removeAllProduct(product: Product) {
+    let updatedCart = this.getCart().filter(item => item.id !== product.id);
+    this.cart.next(updatedCart);
+  }
+
 }
