@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="cartItems.length > 0; else noCartItems">
   <div class="header">
     <h2>You have {{totalQuantity}} items in your cart for {{cartItems.length}} products!</h2>
   </div>
@@ -14,3 +14,9 @@
     <fa-icon [icon]="faTrash" class="trashBtn" (click)="removeAllProduct(item)"></fa-icon>
   </div>
 </div>
+<ng-template #noCartItems>
+  <div class="no-items">
+    <h1>You don't have items in your cart!</h1>
+    <button routerLink="/">Go To Home Page</button>
+  </div>
+</ng-template>

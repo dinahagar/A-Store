@@ -65,3 +65,28 @@
   font-size: 20px;
   font-weight: 500;
 }
+
+.no-items {
+  text-align: center;
+  background: #f1f1f1;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 100px;
+}
+
+.no-items h1 {
+  color: darkblue;
+  font-size: 40px;
+}
+
+.no-items button {
+  border: none;
+  font-size: 18px;
+  color: white;
+  background: crimson;
+  height: 50px;
+  border-radius: 50px;
+  box-shadow: 0px 2px 4px 2px darkgray;
+  cursor: pointer;
+  width: 50%;
+}
