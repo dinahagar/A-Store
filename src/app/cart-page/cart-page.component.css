@@ -1,0 +1,67 @@
+.header h2 {
+  color: darkblue;
+}
+
+.itemCard {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0px 2px 4px 2px darkgray;
+  margin-bottom: 20px;
+}
+
+.itemCard img {
+  width: 100%;
+  height: auto;
+  max-height: 85px;
+  max-width: 80px;
+}
+
+.title {
+  color: darkblue;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.price {
+  color: brown;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.trashBtn {
+  font-size: 25px;
+  color: crimson;
+  cursor: pointer;
+}
+
+.numOfItems {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: solid 1px transparent;
+  border-radius: 50px;
+  padding: 5px;
+  background-color: #f1f1f1;
+}
+
+.addBtn {
+  font-size: 25px;
+  cursor: pointer;
+  color: red;
+}
+
+.minusBtn {
+  font-size: 25px;
+  cursor: pointer;
+  color: darkblue;
+}
+
+.number {
+  font-size: 20px;
+  font-weight: 500;
+}

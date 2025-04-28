@@ -36,9 +36,16 @@
     </div>
   </div>
   <div class="addToCartBtn">
-    <button>
-      <fa-icon [icon]="faCirclePlus" class="addBtn"></fa-icon>
-      <span>Add To Cart</span>
-    </button>
+    <div class="numOfItems" *ngIf="getQuantity(productDetails)>0; else notInCart">
+      <fa-icon [icon]="faCirclePlus" class="addBtn" (click)="addToCart(productDetails)"></fa-icon>
+      <span class="number">{{getQuantity(productDetails)}}</span>
+      <fa-icon [icon]="faCircleMinus" class="minusBtn"></fa-icon>
+    </div>
+    <ng-template #notInCart>
+      <button (click)="addToCart(productDetails)">
+        <fa-icon [icon]="faCirclePlus" class="addItemBtn"></fa-icon>
+        <span>Add To Cart</span>
+      </button>
+    </ng-template>
   </div>
 </div>

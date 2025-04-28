@@ -51,3 +51,7 @@ ul li {
   text-decoration: none;
   color: white;
 }
+
+.badge{
+  cursor: pointer;
+}

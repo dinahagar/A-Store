@@ -6,6 +6,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,9 @@ const routes: Routes = [
       },
       {
         path: 'products/:id', component: ProductDetailsComponent
+      },
+      {
+        path: 'cart', component: CartPageComponent
       }
     ]
   },

@@ -24,6 +24,8 @@ import { FormsModule } from '@angular/forms';
 import {MatMenuModule} from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
     CategoryProductsComponent,
     ProductDetailsComponent,
     LoginComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
     MatDividerModule,
     MatCardModule,
     MatMenuModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

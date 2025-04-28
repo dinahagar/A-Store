@@ -111,3 +111,32 @@ a {
   cursor: pointer;
   text-decoration-line: underline;
 }
+
+.numOfItems {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: solid 1px transparent;
+  border-radius: 50px;
+  padding: 5px;
+  background-color: #f1f1f1;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.addBtn {
+  font-size: 30px;
+  cursor: pointer;
+  color: red;
+}
+
+.minusBtn {
+  font-size: 30px;
+  cursor: pointer;
+  color: darkblue;
+}
+
+.number {
+  font-size: 18px;
+  font-weight: 500;
+}

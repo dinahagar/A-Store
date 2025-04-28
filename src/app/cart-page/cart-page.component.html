@@ -1,0 +1,16 @@
+<div>
+  <div class="header">
+    <h2>You have {{totalQuantity}} items in your cart for {{cartItems.length}} products!</h2>
+  </div>
+  <div *ngFor="let item of cartItems" class="itemCard">
+    <img src="{{item.image}}" alt="">
+    <p class="title">{{item.title.split(' ')[0]}}</p>
+    <p class="price">{{item.price | currency}}</p>
+    <div class="numOfItems">
+      <fa-icon [icon]="faCirclePlus" class="addBtn" (click)="addToCart(item)"></fa-icon>
+      <span class="number">{{item.quantity}}</span>
+      <fa-icon [icon]="faCircleMinus" class="minusBtn"></fa-icon>
+    </div>
+    <fa-icon [icon]="faTrash" class="trashBtn"></fa-icon>
+  </div>
+</div>

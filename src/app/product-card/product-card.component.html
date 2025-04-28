@@ -18,7 +18,14 @@
     </div>
     <mat-card-actions class="cardButtons">
       <fa-icon [icon]="faCircleInfo" class="infoBtn" routerLink="/products/{{product.id}}"></fa-icon>
-      <fa-icon [icon]="faCirclePlus" class="addBtn"></fa-icon>
+      <div class="numOfItems" *ngIf="getQuantity(product)>0; else notInCart">
+        <fa-icon [icon]="faCirclePlus" class="addBtn" (click)="addToCart(product)"></fa-icon>
+        <span class="number">{{getQuantity(product)}}</span>
+        <fa-icon [icon]="faCircleMinus" class="minusBtn"></fa-icon>
+      </div>
+      <ng-template #notInCart>
+        <fa-icon [icon]="faCirclePlus" class="addBtn" (click)="addToCart(product)"></fa-icon>
+      </ng-template>
     </mat-card-actions>
   </mat-card>
 </div>
