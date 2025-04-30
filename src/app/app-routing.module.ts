@@ -7,10 +7,14 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { LoginComponent } from './login/login.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
   {
     path: 'login', component: LoginComponent
+  },
+  {
+    path: 'checkout', component: CheckoutComponent
   },
   {
     path: '' , component: LayoutComponent, children: [

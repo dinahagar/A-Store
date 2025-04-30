@@ -26,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import {MatBadgeModule} from '@angular/material/badge';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     ProductDetailsComponent,
     LoginComponent,
     NotFoundPageComponent,
-    CartPageComponent
+    CartPageComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
