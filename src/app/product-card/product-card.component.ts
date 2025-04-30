@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../models/product';
 import { faCircleInfo, faCirclePlus, faStar, faCircleMinus } from '@fortawesome/free-solid-svg-icons';
 import { CartService } from '../services/cart/cart.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-card',
@@ -19,7 +18,7 @@ export class ProductCardComponent implements OnInit{
 
   @Input() public products: Product[] = [];
 
-  constructor(private cartService: CartService, private router: Router) {}
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     this.cartService.cart$.subscribe(items => {
@@ -29,10 +28,13 @@ export class ProductCardComponent implements OnInit{
 
   addToCart(product: Product) {
     this.cartService.addToCart(product);
-    // this.router.navigate(['/cart']);
   }
 
-  getQuantity(product: any): number {
+  getQuantity(product: Product): number {
     return this.cartService.getCart().find(p => p.id === product.id)?.quantity || 0;
+  }
+
+  removeFromCart(product: Product) {
+    this.cartService.removeFromCart(product);
   }
 }

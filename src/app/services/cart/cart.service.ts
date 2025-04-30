@@ -33,4 +33,17 @@ export class CartService {
     this.cart.next(updatedCart);
   }
 
+  removeFromCart(product: Product) {
+    const cartItems = this.getCart();
+    const updatedCart = cartItems.map((item: Product) => {
+      const currentQuantity = item.quantity ?? 1;
+      if(item.id === product.id && currentQuantity > 1) {
+        const newQuantity = currentQuantity - 1;
+        return newQuantity > 0 ? {...item, quantity: newQuantity} : null;
+      }
+      return item;
+    }) as Product[];
+    this.cart.next(updatedCart);
+  }
+
 }

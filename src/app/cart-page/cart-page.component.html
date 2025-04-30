@@ -1,4 +1,4 @@
-<!-- <div *ngIf="cartItems.length > 0; else noCartItems"> -->
+<div *ngIf="cartItems.length > 0; else noCartItems">
   <div class="items">
     <div class="header">
       <h2>You have {{totalQuantity}} items in your cart for {{cartItems.length}} products!</h2>
@@ -10,7 +10,7 @@
       <div class="numOfItems">
         <fa-icon [icon]="faCirclePlus" class="addBtn" (click)="addToCart(item)"></fa-icon>
         <span class="number">{{item.quantity}}</span>
-        <fa-icon [icon]="faCircleMinus" class="minusBtn"></fa-icon>
+        <fa-icon [icon]="faCircleMinus" class="minusBtn" (click)="removeFromCart(item)"></fa-icon>
       </div>
       <fa-icon [icon]="faTrash" class="trashBtn" (click)="removeAllProduct(item)"></fa-icon>
     </div>
@@ -32,7 +32,7 @@
       <button>Checkout</button>
     </div>
   </div>
-<!-- </div> -->
+</div>
 
 <ng-template #noCartItems>
   <div class="no-items">

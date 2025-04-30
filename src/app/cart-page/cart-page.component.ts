@@ -25,8 +25,6 @@ export class CartPageComponent implements OnInit{
       this.totalQuantity = this.cartItems.reduce((sum, item) => sum + (item.quantity || 0), 0);
       this.totalPrice = this.cartItems.reduce((sum, item) => sum + (item.price * (item.quantity || 0)), 0);
     })
-    console.log(this.totalPrice);
-
   }
 
   addToCart(product: Product) {
@@ -35,6 +33,10 @@ export class CartPageComponent implements OnInit{
 
   removeAllProduct(product: Product) {
     this.cartService.removeAllProduct(product)
+  }
+
+  removeFromCart(product: Product) {
+    this.cartService.removeFromCart(product);
   }
 
 }

@@ -46,4 +46,8 @@ export class ProductDetailsComponent implements OnInit{
     return this.cartService.getCart().find(p => p.id === product.id)?.quantity || 0;
   }
 
+  removeFromCart(product: Product) {
+    this.cartService.removeFromCart(product);
+  }
+
 }
