@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../services/products/products.service';
 import { Product } from '../models/product';
+import { SearchService } from '../services/search/search.service';
 
 @Component({
   selector: 'app-category-products',
@@ -13,7 +14,7 @@ export class CategoryProductsComponent implements OnInit{
   categoryProducts: Product[] = [];
   category: string = '';
 
-  constructor(private route: ActivatedRoute, private productsService: ProductsService) {}
+  constructor(private route: ActivatedRoute, private productsService: ProductsService, private searchService: SearchService) {}
 
   ngOnInit(): void {
     this.getProductsByCategory();
@@ -21,8 +22,14 @@ export class CategoryProductsComponent implements OnInit{
 
   getProductsByCategory() {
     this.route.params.subscribe(param => {
-      this.productsService.getProductsByCategory(param['category']).subscribe(result => {
-        this.categoryProducts = result;
+      this.searchService.searchTerm$.subscribe(term => {
+        this.productsService.getProductsByCategory(param['category']).subscribe(result => {
+          if(term !== '') {
+            this.categoryProducts = result.filter(item => item.title.toLowerCase().includes(term.toLowerCase()));
+          }else {
+            this.categoryProducts = result;
+          }
+        })
       })
     })
   }
