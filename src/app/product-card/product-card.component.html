@@ -1,31 +1,39 @@
-<div *ngFor="let product of products">
-  <mat-card class="productCard" appearance="outlined">
-    <div class="productImage">
-      <img mat-card-image src="{{product.image}}">
-    </div>
-    <mat-card-content>
-      <p class="productTitle">{{product.title | slice:0:20}}</p>
-      <p class="productCategory">{{product.category}}</p>
-    </mat-card-content>
-    <div class="productDetails">
-      <div class="rate">
-        <fa-icon [icon]="faStar" class="starIcon"></fa-icon>
-        <span class="rateText">{{product.rating.rate}}</span>
+<ng-container *ngIf="(products?.length ?? 0) > 0; else noProducts">
+  <div *ngFor="let product of products">
+    <mat-card class="productCard" appearance="outlined">
+      <div class="productImage">
+        <img mat-card-image src="{{product.image}}">
       </div>
-      <div class="price">
-        <span class="priceText">{{product.price | currency}}</span>
+      <mat-card-content>
+        <p class="productTitle">{{product.title | slice:0:20}}</p>
+        <p class="productCategory">{{product.category}}</p>
+      </mat-card-content>
+      <div class="productDetails">
+        <div class="rate">
+          <fa-icon [icon]="faStar" class="starIcon"></fa-icon>
+          <span class="rateText">{{product.rating.rate}}</span>
+        </div>
+        <div class="price">
+          <span class="priceText">{{product.price | currency}}</span>
+        </div>
       </div>
-    </div>
-    <mat-card-actions class="cardButtons">
-      <fa-icon [icon]="faCircleInfo" class="infoBtn" routerLink="/products/{{product.id}}"></fa-icon>
-      <div class="numOfItems" *ngIf="getQuantity(product)>0; else notInCart">
-        <fa-icon [icon]="faCirclePlus" class="addBtn" (click)="addToCart(product)"></fa-icon>
-        <span class="number">{{getQuantity(product)}}</span>
-        <fa-icon [icon]="faCircleMinus" class="minusBtn" (click)="removeFromCart(product)"></fa-icon>
-      </div>
-      <ng-template #notInCart>
-        <fa-icon [icon]="faCirclePlus" class="addBtn" (click)="addToCart(product)"></fa-icon>
-      </ng-template>
-    </mat-card-actions>
-  </mat-card>
-</div>
+      <mat-card-actions class="cardButtons">
+        <fa-icon [icon]="faCircleInfo" class="infoBtn" routerLink="/products/{{product.id}}"></fa-icon>
+        <div class="numOfItems" *ngIf="getQuantity(product)>0; else notInCart">
+          <fa-icon [icon]="faCirclePlus" class="addBtn" (click)="addToCart(product)"></fa-icon>
+          <span class="number">{{getQuantity(product)}}</span>
+          <fa-icon [icon]="faCircleMinus" class="minusBtn" (click)="removeFromCart(product)"></fa-icon>
+        </div>
+        <ng-template #notInCart>
+          <fa-icon [icon]="faCirclePlus" class="addBtn" (click)="addToCart(product)"></fa-icon>
+        </ng-template>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</ng-container>
+
+<ng-template #noProducts>
+  <div class="noProducts">
+    <p>No Products!</p>
+  </div>
+</ng-template>
